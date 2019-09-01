@@ -1,0 +1,34 @@
+#!/bin/sh
+test -e .git && exit 1
+git init-empty
+git remote add origin git@github.com:contactopensource/contactopensource_with_postgresql_liquibase_sql.git
+
+add_starters(){
+  for x in .gitignore  .gitinit CODEOWNERS CONTRIBUTING.md README.md db/database_change_log.xml; do
+      git a $x && git cm "Add $x";
+  done
+  for x in database roles privileges; do
+      git a db/setups/*_create_$x.sql ; git cm "Add $x setup"
+  done
+}
+
+add_concept(){
+  concept=$1
+  message=${concept//_/ }
+  git a db/migrations/*_create_$concept.sql ; git cm "Add $message migration"
+  git a db/examples/$concept.sql ; git cm "Add $message example"
+}
+
+add_concepts(){
+    for x in items arcs tags orgs persons places things events geo_points link_contacts email_contacts telephone_contacts passport_contacts postal_contacts contacts; do
+    add_concept $x
+  done
+}
+
+## Main
+
+add_starters
+add_concepts
+
+echo "You may want to run this now:"
+echo "git push -u origin master -f"
