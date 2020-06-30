@@ -14,12 +14,12 @@ INSERT INTO persons VALUES (
   -- Name-related
   'Alice', -- given_name
   'Amy', -- middle_name
-  'Anderson', -- family_name
-  'Alice Amy Anderson', -- legal_name
+  'Adams', -- family_name
+  'Alice Amy Adams', -- legal_name
   'Dr.', -- prefix_name
   'Jr.', -- suffix_name
-  'Dr. Anderson', -- salutation
-  'Dr. Alice Anderson Jr.', -- addressee
+  'Dr. Adams', -- salutation
+  'Dr. Alice Adams Jr.', -- addressee
   'Ali', -- nickname
 
   -- Pronoun-related

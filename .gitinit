@@ -4,7 +4,7 @@ git init-empty
 git remote add origin git@github.com:contactopensource/contactopensource_with_postgresql_liquibase_sql.git
 
 add_starters(){
-  for x in .gitignore  .gitinit CODEOWNERS CONTRIBUTING.md README.md db/database_change_log.xml; do
+  for x in .gitignore  .gitinit CODEOWNERS CONTRIBUTING.md README.md doc/uml/tables doc/uml/types db/database_change_log.xml; do
       git a $x && git cm "Add $x";
   done
   for x in database roles privileges; do
@@ -20,7 +20,7 @@ add_concept(){
 }
 
 add_concepts(){
-    for x in items arcs tags orgs persons places things events geo_points link_contacts email_contacts telephone_contacts passport_contacts postal_contacts contacts; do
+    for x in items arcs tags orgs persons places things events geo_points link_contacts email_contacts phone_contacts passport_contacts postal_contacts contacts; do
     add_concept $x
   done
 }

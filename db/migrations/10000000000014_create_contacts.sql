@@ -19,7 +19,7 @@ CREATE TABLE contacts (
   updated_by_text text, -- example: explanation of who updated the contact, why, how, etc.
 
   -- General-related
-  name text, -- example: "Alice Anderson"
+  name text, -- example: "Alice Adams"
   emoji text, -- example: "U+1F60A" is smiling face with smiling eyes
 
   -- Display-related

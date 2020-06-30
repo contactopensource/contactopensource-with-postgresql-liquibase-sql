@@ -57,36 +57,38 @@ CREATE TABLE arcs (
   purpose uuid, -- example: a1e4c5aba03970a1a511c0caf678643a, which means "likes"
   count integer, -- count, such as an instance index; example: 10 means count 10
   weight real, -- weight, such as a graph cost or length; example: 2 means weight 2
-  probability real -- probability, 0 to 1 inclusive; example: 0.1 means probability 10%
+  unit_interval, real -- unit interval, 0 to 1 inclusive; example: 0.1 means unit interval 10%
+  dual_interval real -- dual interval, -1 to 1 inclusive; example: -0.1 means unit interval -10%
 
 );
 
 -- Programming-related
-CREATE INDEX ix_arcs_tenant_id on arcs(tenant_id);;
-CREATE INDEX ix_arcs_typecast on arcs(typecast);
-CREATE INDEX ix_arcs_state on arcs(state);
+CREATE INDEX ix_edges_tenant_id on arcs(tenant_id);;
+CREATE INDEX ix_edges_typecast on arcs(typecast);
+CREATE INDEX ix_edges_state on arcs(state);
 
 -- Update-related
-CREATE INDEX ix_arcs_updated_at_timestamp_utc on arcs(updated_at_timestamp_utc);
-CREATE INDEX ix_arcs_updated_at_clock_counter on arcs(updated_at_clock_counter);
-CREATE INDEX ix_arcs_updated_by_text on arcs(updated_by_text);
+CREATE INDEX ix_edges_updated_at_timestamp_utc on arcs(updated_at_timestamp_utc);
+CREATE INDEX ix_edges_updated_at_clock_counter on arcs(updated_at_clock_counter);
+CREATE INDEX ix_edges_updated_by_text on arcs(updated_by_text);
 
 -- Source table
-CREATE INDEX ix_arcs_t1 on arcs(t1);
-CREATE INDEX ix_arcs_i1 on arcs(i1);
+CREATE INDEX ix_edges_t1 on arcs(t1);
+CREATE INDEX ix_edges_i1 on arcs(i1);
 
 -- Target table and id
-CREATE INDEX ix_arcs_t2 on arcs(t2);
-CREATE INDEX ix_arcs_i2 on arcs(i2);
+CREATE INDEX ix_edges_t2 on arcs(t2);
+CREATE INDEX ix_edges_i2 on arcs(i2);
 
 -- Lifecycle
-CREATE INDEX ix_arcs_start_at_timestamp_utc on arcs(start_at_timestamp_utc);
-CREATE INDEX ix_arcs_stop_at_timestamp_utc on arcs(_at_timestamp_utc);
+CREATE INDEX ix_edges_start_at_timestamp_utc on arcs(start_at_timestamp_utc);
+CREATE INDEX ix_edges_stop_at_timestamp_utc on arcs(_at_timestamp_utc);
 
 -- Modifiers
-CREATE INDEX ix_arcs_purpose on arcs(purpose);
-CREATE INDEX ix_arcs_count on arcs(count);
-CREATE INDEX ix_arcs_weight on arcs(weight);
-CREATE INDEX ix_arcs_probability on arcs(probability);
+CREATE INDEX ix_edges_purpose on arcs(purpose);
+CREATE INDEX ix_edges_count on arcs(count);
+CREATE INDEX ix_edges_weight on arcs(weight);
+CREATE INDEX ix_edges_unit_interval on arcs(unit_interval);
+CREATE INDEX ix_edges_dual_interval on arcs(dual_interval);
 
 --rollback drop table arcs;

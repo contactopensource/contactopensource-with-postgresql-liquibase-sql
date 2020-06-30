@@ -27,6 +27,7 @@ INSERT INTO arcs VALUES (
   CAST('d0fbc73c8dc04ce514a2132ee9431d11' as uuid), -- purpose
   8, -- count
   8.8, -- weight
-  0.8 -- probability
+  0.8 -- unit_interval
+  -0.8 -- dual_interval
 
 );

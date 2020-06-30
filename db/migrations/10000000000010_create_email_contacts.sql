@@ -19,8 +19,8 @@ CREATE TABLE email_contacts (
   updated_by_text text, -- example: explanation of who updated the contact, why, how, etc.
 
   -- Email-related
-  address text, -- example: "Alice Anderson <alice@example.com>" -- see https://tools.ietf.org/html/rfc5322
-  display_name text, -- example: "Alice Anderson"
+  address text, -- example: "Alice Adams <alice@example.com>" -- see https://tools.ietf.org/html/rfc5322
+  display_name text, -- example: "Alice Adams"
   addr_spec text -- example: "alice@example.com"
 
 );

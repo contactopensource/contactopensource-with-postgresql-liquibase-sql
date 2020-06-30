@@ -12,8 +12,8 @@ INSERT INTO email_contacts VALUES (
   'updated by example', -- updated_by_text
 
   -- Email-related
-  'Alice Anderson <alice@example.com>', -- address
-  'Alice Anderson', -- display_name
+  'Alice Adams <alice@example.com>', -- address
+  'Alice Adams', -- display_name
   'alice@example.com' -- addr_spec
 
 );

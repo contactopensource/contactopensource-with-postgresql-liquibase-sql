@@ -21,12 +21,12 @@ CREATE TABLE persons (
   -- Name-related
   given_name text, -- example: "Alice"
   middle_name text, --example: "Amy"
-  family_name text, -- example: "Anderson"
-  legal_name text, -- example: Alice Amy Anderson"
+  family_name text, -- example: "Adams"
+  legal_name text, -- example: Alice Amy Adams"
   prefix_name text, -- example: "Dr."
   suffix_name text, -- example: "Jr."
-  salutation text, -- example: "Dr. Anderson"
-  addressee text, -- example: "Dr. Alice Anderson Jr."
+  salutation text, -- example: "Dr. Adams"
+  addressee text, -- example: "Dr. Alice Adams Jr."
   nickname text, -- example: "Ali"
 
   -- Pronoun-related
